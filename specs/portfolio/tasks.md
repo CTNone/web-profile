@@ -37,7 +37,7 @@ description: "Danh sách công việc và lộ trình triển khai dự án AI E
 
 ## Giai đoạn 3: Tinh chỉnh & Build (Đã hoàn thành)
 - [x] T010 Lắp ráp mọi Component lại thành quy trình Logic trong vỏ bọc `App.tsx` và nạp vào trang `main.tsx`.
-- [x] T011 Chạy giả lập đóng gói Production (`npm run build`) để xác minh mã lỗi. 
+- [x] T011 Chạy giả lập đóng gói Production (`npm run build`) để xác minh mã lỗi.
 
 ---
 
@@ -50,3 +50,14 @@ description: "Danh sách công việc và lộ trình triển khai dự án AI E
 - [x] T014 [P] Xây dựng `Education.tsx` sử dụng cấu trúc Vertical Timeline và mốc thời gian thiết kế với Framer Motion mượt mà.
 - [x] T015 [P] Xây dựng `Extracurricular.tsx` dưới định dạng Horizontal Carousel (băng chuyền ảnh) đẹp mắt và có hiệu ứng lướt.
 - [x] T016 Hook (kết dính) `Education` và `Extracurricular` vào trong `App.tsx`, thay đổi `Navbar.tsx` cập nhật thêm thanh cuộn mục lục tương ứng (anchor links).
+
+---
+
+## Giai đoạn 5: Đồng bộ production & tài liệu vận hành (Đã hoàn thành)
+
+**Mục đích**: Đồng bộ tài liệu với trạng thái triển khai thực tế trên GitHub Pages và quy trình nhánh an toàn.
+
+- [x] T017 Xác nhận cấu hình production dùng GitHub Pages với `base: '/web-profile/'` trong `vite.config.ts`.
+- [x] T018 Xác nhận dữ liệu tĩnh dùng `import.meta.env.BASE_URL` trong `src/data/portfolio.ts` để chạy đúng trên cả local và production.
+- [x] T019 Thiết lập và xác nhận mô hình nhánh: `main` (production), `dev` (phát triển).
+- [x] T020 Rà soát và cập nhật lại tài liệu `specs/portfolio/plan.md` và `specs/portfolio/tasks.md` khớp với trạng thái code hiện tại.
