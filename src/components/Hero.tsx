@@ -23,7 +23,7 @@ const Hero = () => {
             <div className="hero-actions">
               <button 
                 className="btn btn-primary"
-                onClick={() => window.open('/cv.pdf', '_blank')}
+                onClick={() => window.open(`${import.meta.env.BASE_URL}cv.pdf`, '_blank')}
               >
                 <Download size={20} />
                 Download CV

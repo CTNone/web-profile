@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 export const portfolioData = {
   profile: {
     name: "Chu Thân Nhất",
@@ -101,21 +102,21 @@ export const portfolioData = {
       title: "Giải Ba Tin Học - Giải Thuật",
       issuer: "Sở Giáo dục và Đào tạo Thái Nguyên",
       date: "2021",
-      pdfUrl: "/certs/giai3Tin.pdf"
+      pdfUrl: `${import.meta.env.BASE_URL}certs/giai3Tin.pdf`
     },
     {
       id: "a2",
       title: "Chinh phục Fansipan",
       issuer: "Ban Quản Lý Vườn Quốc Gia Hoàng Liên",
       date: "22/3/2026",
-      pdfUrl: "/certs/fansipang.pdf"
+      pdfUrl: `${import.meta.env.BASE_URL}certs/fansipang.pdf`
     },
     {
       id: "a3",
       title: "Chứng chỉ VNU",
       issuer: "Trung tâm Dự báo và Phát triển nguồn nhân lực",
       date: "9/9/2026",
-      pdfUrl: "/certs/certified.pdf"
+      pdfUrl: `${import.meta.env.BASE_URL}certs/certified.pdf`
     }
   ],
   education: [
@@ -138,17 +139,17 @@ export const portfolioData = {
     {
       id: "ex1",
       title: "Đá bóng",
-      imageUrl: "/images/footBall.JPG"
+      imageUrl: `${import.meta.env.BASE_URL}images/footBall.JPG`
     },
     {
       id: "ex2",
       title: "Chinh phục ngọn núi Fansipan",
-      imageUrl: "/images/fansipang.jpg"
+      imageUrl: `${import.meta.env.BASE_URL}images/fansipang.jpg`
     },
     {
       id: "ex3",
       title: "Giải chạy Marathon CTN",
-      imageUrl: "/images/Run-CTN-2.jpg"
+      imageUrl: `${import.meta.env.BASE_URL}images/Run-CTN-2.jpg`
     },
 
     // {

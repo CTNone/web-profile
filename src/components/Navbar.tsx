@@ -16,7 +16,7 @@ const Navbar = () => {
           <a href="#awards">Giải thưởng</a>
           <a href="#extracurricular">Ngoại khóa</a>
         </nav>
-        <button className="btn btn-outline" onClick={() => window.open('/cv.pdf', '_blank')}>
+        <button className="btn btn-outline" onClick={() => window.open(`${import.meta.env.BASE_URL}cv.pdf`, '_blank')}>
           <Download size={18} />
           CV
         </button>
