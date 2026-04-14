@@ -3,7 +3,7 @@ export const portfolioData = {
   profile: {
     name: "Chu Thân Nhất",
     title: "Fresher AI Engineer",
-    summary: "Xin chào, tôi là Nhất, FRESHER AI ENGINEER từ Đại học Công Nghệ. Tôi luôn sẵn sàng tham gia các dự án với các nhiệm vụ: data cleaning; annotation; fine-tuning mô hình; triển khai prototype; RAG chatbot; sửa lỗi và tối ưu mô hình.",
+    summary: "Xin chào, tôi là Nhất, FRESHER AI ENGINEER từ Đại học Công Nghệ. Tôi luôn sẵn sàng tham gia các dự án với các nhiệm vụ: data cleaning; annotation; build AI agent; fine-tuning mô hình; triển khai prototype; RAG chatbot; sửa lỗi và tối ưu mô hình.",
     email: "nhatthanchu@gmail.com",
     githubUrl: "https://github.com/CTNone",
     linkedinUrl: "https://www.linkedin.com/in/nh%E1%BA%A5t-chu-256814353/",
