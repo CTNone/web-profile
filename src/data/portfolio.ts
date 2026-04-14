@@ -44,7 +44,7 @@ export const portfolioData = {
       role: "AI Research Intern",
       company: "AI & Finance Lab",
       date: "3/2025 - 6/2025",
-      description: "Đọc và tóm tắt các bài báo nghiên cứu về AI cho tài chính, tập trung vào các mô hình Transformer và Time2Vec, đạt độ chính xác 66% trên bộ dữ liệu thử nghiệm.",
+      description: "Đọc và tóm tắt các bài báo nghiên cứu về AI cho tài chính, đọc các mô hình sau đó tập trung vào Transformer và Time2Vec, đạt độ chính xác 66% trên bộ dữ liệu test.",
       technologies: ["Transformer", "Time2Vec"],
       links: [
         { label: "Report", url: "#" },
