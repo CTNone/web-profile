@@ -42,6 +42,15 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  /* Ngăn chặn con trỏ văn bản hiện ở những vùng không cần thiết */
+  cursor: default;
+  /* Làm dấu nháy văn bản (nếu có hiện do F7) trở nên tàng hình */
+  caret-color: transparent;
+}
+
+/* Cho phép chọn văn bản chỉ ở những phần chứa nội dung */
+p, h1, h2, h3, h4, span, li {
+  cursor: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -581,6 +590,56 @@ a:hover {
   padding: 2rem 1.5rem 1.5rem;
   background: linear-gradient(transparent, rgba(0,0,0,0.8));
   color: white;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%; /* Sát ngay dưới nút */
+  padding-top: 8px; /* Tạo khoảng trống ảo để chuột không bị rời ra */
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.dropdown-inner {
+  background-color: var(--bg-card);
+  min-width: 180px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-card-hover);
+  color: var(--accent-primary);
 }
 
 /* Responsive */

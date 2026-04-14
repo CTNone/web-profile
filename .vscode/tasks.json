@@ -1,0 +1,58 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Create task/test markdown templates",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-Command",
+				"New-Item -ItemType Directory -Force -Path .\\specs\\portfolio\\tasks | Out-Null; New-Item -ItemType Directory -Force -Path .\\specs\\portfolio\\tests | Out-Null"
+			]
+		},
+		{
+			"label": "Write sample task and test markdown",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-Command",
+				"$taskContent=@'---\nid: T001\ntitle: Create Hero component\nphase: development\nstatus: pending\nowner: frontend\nrelated-master: ../tasks.md\n---\n\n# T001 - Create Hero component\n\n## Mô tả\nTạo component `Hero.tsx` để hiển thị tên, vai trò/nghề nghiệp, và nút `Liên hệ`.\n\n### Yêu cầu chức năng\n- Hiển thị tên cá nhân và nghề nghiệp.\n- Có nút `Liên hệ` rõ ràng.\n- Khi bấm nút, cuộn đến `Footer`.\n\n## Liên kết\n- Master task file: `../tasks.md`\n- Test case file: `../tests/T001-create-hero-component.test.md`\n\n## Ghi chú cho automation\n- `id` dùng để liên kết task và testcase.\n- `phase` dùng để nhóm theo giai đoạn.\n- `status` dùng để theo dõi trạng thái.\n'@; Set-Content -Path .\\specs\\portfolio\\tasks\\T001-create-hero-component.md -Value $taskContent -Encoding UTF8; $testContent=@'---\nid: T001\ntitle: Create Hero component test cases\nphase: development\nstatus: pending\ntask-file: ../tasks/T001-create-hero-component.md\n---\n\n# Test case T001 - Create Hero component\n\n## Mục tiêu\nXác minh component `Hero.tsx` hiển thị nội dung đúng và nút `Liên hệ` hoạt động.\n\n## Test cases\n- [ ] Render component không lỗi.\n- [ ] Hiển thị tên người dùng đúng.\n- [ ] Hiển thị nghề nghiệp đúng.\n- [ ] Xuất hiện nút `Liên hệ`.\n- [ ] Khi bấm nút `Liên hệ`, cuộn tới phần `Footer`.\n\n## Hướng dẫn kiểm tra thủ công\n1. Mở trang trong trình duyệt.\n2. Xác nhận component Hero xuất hiện.\n3. Bấm nút `Liên hệ` và kiểm tra scroll.\n4. Nếu automation có script, chạy script tương ứng.\n'@; Set-Content -Path .\\specs\\portfolio\\tests\\T001-create-hero-component.test.md -Value $testContent -Encoding UTF8;",
+				"explanation",
+				"Create sample task and separate test markdown files for one task.",
+				"goal",
+				"Generate task/test example files",
+				"isBackground",
+				"false",
+				"timeout",
+				"10000",
+				"problemMatcher"
+			]
+		},
+		{
+			"label": "Verify folder structure",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-Command",
+				"Get-ChildItem -Path .\\specs\\portfolio -Force | Sort-Object | Format-List Name,Mode,Length"
+			]
+		},
+		{
+			"label": "Cleanup and create phase1 test files",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-Command",
+				"Remove-Item -Path .\\specs\\portfolio\\tasks -Recurse -Force; Remove-Item -Path .\\specs\\portfolio\\tests -Recurse -Force; $files = @{ 'T001-khoi-tao-du-an-vite-react.test.md' = @'---\nid: T001\ntitle: Khởi tạo dự án Vite + React (TypeScript)\nphase: Cài đặt & Nền tảng\nstatus: pending\ntask-file: tasks.md\n---\n\n# Test case T001\n\n## Mục tiêu\nXác minh việc khởi tạo dự án Vite + React với TypeScript thành công.\n\n## Test cases\n- [ ] Có file `package.json` với dependencies React và Vite.\n- [ ] Có file `tsconfig.json`.\n- [ ] Có file `vite.config.ts`.\n- [ ] Dự án chạy được bằng `npm run dev`.\n\n## Hướng dẫn kiểm tra\n1. Chạy `npm install`.\n2. Chạy `npm run dev` và kiểm tra server phản hồi.\n'@; 'T002-config-tsconfig-vite.test.md' = @'---\nid: T002\ntitle: Cấu hình tsconfig.json, tsconfig.app.json và vite.config.ts\nphase: Cài đặt & Nền tảng\nstatus: pending\ntask-file: tasks.md\n---\n\n# Test case T002\n\n## Mục tiêu\nXác minh cấu hình TypeScript và Vite được thiết lập đúng.\n\n## Test cases\n- [ ] Không có lỗi TypeScript khi chạy `npm run build`.\n- [ ] `tsconfig.json` và `tsconfig.app.json` có cấu hình hợp lý.\n- [ ] `vite.config.ts` có plugin React và cấu hình chuẩn.\n\n## Hướng dẫn kiểm tra\n1. Chạy `npm run build`.\n2. Kiểm tra nội dung cấu hình.\n'@; 'T003-cai-dat-thu-vien-core.test.md' = @'---\nid: T003\ntitle: Cài đặt các thư viện lõi framer-motion và lucide-react\nphase: Cài đặt & Nền tảng\nstatus: pending\ntask-file: tasks.md\n---\n\n# Test case T003\n\n## Mục tiêu\nXác minh các thư viện `framer-motion` và `lucide-react` được cài đặt và có thể build.\n\n## Test cases\n- [ ] `package.json` chứa `framer-motion` và `lucide-react`.\n- [ ] Import demo từ cả hai thư viện build không lỗi.\n- [ ] Component cơ bản sử dụng icon và animation render thành công.\n\n## Hướng dẫn kiểm tra\n1. Kiểm tra `package.json`.\n2. Tạo component demo với import từ thư viện.\n'@; 'T004-thiet-lap-css-variables.test.md' = @'---\nid: T004\ntitle: Thiết lập CSS Variables toàn cục và Design System\nphase: Cài đặt & Nền tảng\nstatus: pending\ntask-file: tasks.md\n---\n\n# Test case T004\n\n## Mục tiêu\nXác minh CSS variables toàn cục và design system cơ bản được định nghĩa trong `index.css`.\n\n## Test cases\n- [ ] `index.css` định nghĩa CSS variables toàn cục (ví dụ `--bg`, `--text`, `--primary`).\n- [ ] Các biến được áp dụng trong ít nhất một selector.\n- [ ] Build và render trang không gây lỗi CSS.\n\n## Hướng dẫn kiểm tra\n1. Kiểm tra `index.css`.\n2. Chạy ứng dụng và xác nhận giao diện cơ bản.\n'@ }; foreach ($name in $files.Keys) { Set-Content -Path .\\specs\\portfolio\\$name -Value $files[$name] -Encoding UTF8 }; Get-ChildItem -Path .\\specs\\portfolio -Force | Sort-Object | Format-List Name,Mode,Length"
+			]
+		}
+	]
+}

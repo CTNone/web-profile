@@ -6,7 +6,7 @@ const Education = () => {
   return (
     <section className="education section" id="education">
       <div className="container">
-        <h2 className="section-title">Học tập & Công tác</h2>
+        <h2 className="section-title">Học tập</h2>
         <div className="timeline">
           {portfolioData.education.map((edu, index) => (
             <motion.div 

@@ -6,7 +6,12 @@ export const portfolioData = {
     summary: "Xin chào, tôi là Nhất, FRESHER AI ENGINEER từ Đại học Công Nghệ. Tôi luôn sẵn sàng tham gia các dự án với các nhiệm vụ: data cleaning; annotation; fine-tuning mô hình; triển khai prototype; RAG chatbot; sửa lỗi và tối ưu mô hình.",
     email: "nhatthanchu@gmail.com",
     githubUrl: "https://github.com/CTNone",
-    linkedinUrl: "https://www.linkedin.com/in/nh%E1%BA%A5t-chu-256814353/"
+    linkedinUrl: "https://www.linkedin.com/in/nh%E1%BA%A5t-chu-256814353/",
+    cvs: [
+      { label: "CV AI Intern", filename: "CV_intern_AI.pdf" },
+      { label: "CV Python Intern", filename: "CV_intern_Python.pdf" }
+    ],
+    orientation: "Trong tương lai 3-5 năm tới, TÔI muốn trở thành một Mid level AI Engineer hoạt động trong lĩnh vực Deep Learning, Computer Vision với những mô hình thực tế, cho ra sản phẩm chạy nhanh, nhẹ. Đề xuất những phương pháp mới cho công ty có thể dẫn dắt Intern, Fresher. "
   },
   skills: [
     { id: "s1", name: "Annotation", category: "Xử lý dữ liệu", proficiency: "Intermediate" },
@@ -29,7 +34,23 @@ export const portfolioData = {
     { id: "s18", name: "OpenCV", category: "Công cụ & Ngôn ngữ", proficiency: "Advanced" },
     { id: "s19", name: "Git", category: "Công cụ & Ngôn ngữ", proficiency: "Intermediate" },
     { id: "s20", name: "Docker", category: "Công cụ & Ngôn ngữ", proficiency: "Fresher" },
-    { id: "s21", name: "C++", category: "Công cụ & Ngôn ngữ", proficiency: "Fresher" }
+    { id: "s21", name: "C++", category: "Công cụ & Ngôn ngữ", proficiency: "Fresher" },
+    { id: "s22", name: "B1", category: "English", proficiency: "Advanced" },
+    { id: "s23", name: "Reading comprehension", category: "English", proficiency: "Advanced" },
+  ],
+  experiences: [
+    {
+      id: "exp1",
+      role: "AI Research Intern",
+      company: "AI & Finance Lab",
+      date: "3/2025 - 6/2025",
+      description: "Đọc và tóm tắt các bài báo nghiên cứu về AI cho tài chính, tập trung vào các mô hình Transformer và Time2Vec, đạt độ chính xác 66% trên bộ dữ liệu thử nghiệm.",
+      technologies: ["Transformer", "Time2Vec"],
+      links: [
+        { label: "Report", url: "#" },
+        { label: "Github", url: "https://github.com/CTNone" }
+      ]
+    }
   ],
   projects: [
     {
@@ -125,7 +146,7 @@ export const portfolioData = {
       institution: "Đại học Công Nghệ",
       degree: "Kỹ sư Trí tuệ Nhân tạo",
       date: "2022 - 2026",
-      description: "GPA: 2.9/4.0. Tập trung vào Computer Vision, NLP và Web.",
+      description: "GPA: 2.91/4.0. Tập trung vào Computer Vision, NLP và Web.",
     },
     {
       id: "e2",

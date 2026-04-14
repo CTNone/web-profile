@@ -21,13 +21,18 @@ const Hero = () => {
             <p className="hero-summary">{portfolioData.profile.summary}</p>
             
             <div className="hero-actions">
-              <button 
-                className="btn btn-primary"
-                onClick={() => window.open(`${import.meta.env.BASE_URL}cv.pdf`, '_blank')}
-              >
-                <Download size={20} />
-                Download CV
-              </button>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                {portfolioData.profile.cvs.map((cv, index) => (
+                  <button 
+                    key={index}
+                    className="btn btn-primary"
+                    onClick={() => window.open(`${import.meta.env.BASE_URL}${cv.filename}`, '_blank')}
+                  >
+                    <Download size={20} />
+                    {cv.label}
+                  </button>
+                ))}
+              </div>
               
               <div className="social-links">
                 <a href={portfolioData.profile.githubUrl} target="_blank" rel="noopener noreferrer" className="social-icon">
